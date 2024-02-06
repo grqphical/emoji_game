@@ -20,10 +20,10 @@ h1 {
 }
 
 .game {
-  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 90vh;
 }
 
 .streakCounters {
@@ -123,8 +123,7 @@ h1 {
 }
 
 .footer {
-  position: fixed;
-  bottom: 0;
+  margin-top: auto;
 }
 
 .footer p {

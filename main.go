@@ -18,7 +18,7 @@ func main() {
 	router := routes.MakeRouter()
 
 	log.Println("Server is running...")
-	err = http.ListenAndServe(os.Getenv("HOST_ADDRESS"), router)
+	err = http.ListenAndServe(os.Getenv("HOST_ADDR"), router)
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -14,10 +14,10 @@ $ git clone https://github.com/grqphical/emoji-game
 
 2. Make sure you have Go 1.21 installed
 
-3. Create a .env file and define HOST_ADDRESS as an enviroment variable with the address you want to host on. The example below will host on port 8000
+3. Create a .env file and define HOST_ADDR as an enviroment variable with the address you want to host on. The example below will host on port 8000
 
 ```
-HOST_ADDRESS=:8000
+HOST_ADDR=:8000
 ```
 
 3. Run the makefile
