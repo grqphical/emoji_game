@@ -1,0 +1,52 @@
+package templates 
+
+templ Index(title string) {
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="/static/vendor/js/htmx.min.js"></script>
+    <script defer src="/static/vendor/js/alpine.persist.min.js"></script>
+    <script defer src="/static/vendor/js/alpine.min.js"></script>
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <title>{title}</title>
+  </head>
+  <body x-data="{
+    streak: 0,
+    highestStreak: $persist(0),
+    get currentStreak() {
+      return this.streak;
+    },
+    get currentHighStreak() {
+      return this.highestStreak;
+    },
+    updateStreak() {
+      this.streak++;
+      if (this.streak > this.highestStreak) {
+        this.highestStreak = this.streak;
+      }
+    },
+  }">
+    <div class="game">
+      <h1>Guess the emoji</h1>
+      <div class="streakCounters">
+        <div class="streakCounter">
+          <p title="Streak">🔥 <span x-text="currentStreak"></span></p>
+        </div>
+        <div class="streakCounter">
+          <p title="Highest Streak">🏆 <span x-text="currentHighStreak"></span></p>
+        </div>
+      </div>
+      
+      <div hx-get="/emoji" hx-trigger="load, reload from:body" hx-target="#guessForm"></div>
+      <form hx-post="/guess" hx-trigger="submit" hx-target="#response" hx-swap="innerHTML" id="guessForm" class="guessForm"></form>
+      <div id="response"></div>
+      <div class="footer">
+        <p>Made by <a href="https://github.com/grqphical">grqphical</a></p>
+      </div>
+    </div>
+  </body>
+</html>
+}

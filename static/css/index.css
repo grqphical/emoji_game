@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+:root {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+
+  --background-primary: #24232b;
+  --background-secondary: #18181d;
+  --text-color: #eeeeee;
+}
+
+body {
+  background-color: var(--background-primary);
+  color: var(--text-color);
+  padding: 10px;
+}
+
+h1 {
+  font-size: 2.75rem;
+}
+
+.game {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.streakCounters {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 20px;
+}
+
+.streakCounter {
+  background-color: var(--background-secondary);
+  padding: 5px 50px;
+  border-radius: 8px;
+  font-size: 1.5rem;
+}
+
+.emoji {
+  font-size: 10rem;
+  text-align: center;
+  margin: 20px;
+  user-select: none;
+}
+
+.guessForm {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 350px;
+}
+
+.guessTitle {
+  font-size: 1.25rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  flex-grow: 1;
+  background-color: var(--background-secondary);
+  color: var(--text-color);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #0c85ca;
+}
+
+.guessBox {
+  padding: 5px;
+  font-size: 1.25rem;
+  background-color: var(--background-secondary);
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+.correct {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  min-width: 350px;
+  padding: 5px;
+  border-radius: 8px;
+  align-items: center;
+  text-align: center;
+}
+
+.wrong {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  min-width: 350px;
+  padding: 5px;
+  border-radius: 8px;
+  align-items: center;
+  text-align: center;
+}
+
+.playAgain {
+  background-color: var(--background-secondary);
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out;
+  padding: 10px 20px;
+}
+
+.playAgain:hover {
+  background-color: #0c85ca;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+}
+
+.footer p {
+  color: #555555;
+}
+
+.footer p a {
+  color: #0c85ca;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .game {
+    margin-top: 0px;
+  }
+
+  .streakCounter {
+    padding: 5px 20px;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .streakCounters {
+    width: 100%;
+    gap: 10px;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+  }
+}

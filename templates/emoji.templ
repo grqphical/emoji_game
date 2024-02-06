@@ -1,0 +1,15 @@
+package templates
+
+import "github.com/grqphical/emoji-game/internal/api"
+
+templ EmojiTemplate(emoji api.Emoji) {
+    <div class="emojiContainer">
+        <p class="emoji">@templ.Raw(emoji.HtmlCode[0])</p>
+    </div>
+    <input type="hidden" name="emoji" value={emoji.Name}/>
+    <label class="guessTitle">Guess:</label>
+    <input type="text" name="guess" class="guessBox"/>
+    <div class="buttons">
+        <button type="submit" class="button">Submit</button>
+    </div>
+}

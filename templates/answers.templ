@@ -1,0 +1,17 @@
+package templates
+
+templ Correct() {
+    <div class="correct" id="correct">
+        <p>✅ Correct! Nice Job</p>
+        <button class="playAgain" hx-get="/play-again" hx-swap="delete" hx-target="#correct" x-on:click="updateStreak()">Play Again</button>
+    </div>
+    
+}
+
+templ Wrong(answer string) {
+    <div class="wrong" id="wrong">
+        <p>❌ Sorry that's wrong. The answer(s) was: <b>{answer}</b></p>
+        <button class="playAgain" hx-get="/play-again" hx-swap="delete" hx-target="#wrong" x-on:click="streak = 0">Play Again</button>
+    </div>
+    
+}
